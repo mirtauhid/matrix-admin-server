@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const config = require('./utils/config');
 
 const app = express();
-app.use(express.static('build'));
 
 const loginRouter = require('./controllers/login');
 const usersRouter = require('./controllers/users');
@@ -30,6 +29,7 @@ mongoose
   });
 
 app.use(cors());
+app.use(express.static('build'));
 app.use(express.json());
 app.use(middleware.requestLogger);
 app.use(middleware.tokenExtractor);
