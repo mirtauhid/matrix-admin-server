@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const config = require('./utils/config');
 
 const app = express();
+app.use(express.static('build'));
 
 const loginRouter = require('./controllers/login');
 const usersRouter = require('./controllers/users');
